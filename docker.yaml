@@ -1,0 +1,13 @@
+From node:18-alpine
+
+WORKDIR /jenkins_docker_cicd/
+
+COPY public/ /jenkins_docker_cicd/public
+
+COPY src/ /jenkins_docker_cicd/src
+
+COPY package.json /jenkins_docker_cicd/
+
+RUN npm install
+
+CMD ['npm', 'start']
